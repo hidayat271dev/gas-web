@@ -34,4 +34,14 @@ class UserController extends RestController {
 		$response = $this->UserModel->getDataById($id);
 		return $this->response( $response["response"], $response["code"] );
 	}
+
+	public function update_post($id)
+	{
+		$dataSave = $this->input->post();
+
+		// TODO: Create validation
+		$response = $this->UserModel->updateData($id, $dataSave);
+
+		$this->response( $response["response"], $response["code"] );
+	}
 }

@@ -63,3 +63,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['api/v1/users']['GET'] = 'api/UserController/index';
 $route['api/v1/users/(:any)']['GET'] = 'api/UserController/detail/$1';
 $route['api/v1/users']['POST'] = 'api/UserController/index';
+$route['api/v1/users/(:any)']['POST'] = 'api/UserController/update/$1';
