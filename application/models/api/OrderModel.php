@@ -5,6 +5,13 @@ class OrderModel extends MY_Model {
 
 	private $_tableName = "orders";
 
+	function __construct()
+	{
+		// Construct the parent class
+		parent::__construct();
+		$this->load->model('api/OrderDetailModel', 'OrderDetailModel');
+	}
+
 	public function createData($token = NULL, $data) {
 		if ($token) {
 
@@ -15,6 +22,11 @@ class OrderModel extends MY_Model {
 			$data['user_id'] = $dataUser->uuid;
 			$data['created_at'] = $this->getCurrentDateTime();
 			$data['updated_at'] = $this->getCurrentDateTime();
+
+			$this->OrderDetailModel->createOrderDetailByOrder($data['uuid'], $data['user_id'], $data['item'], $data['qty']);
+
+			unset($data['item']);
+			unset($data['qty']);
 
 			$result = $this->db->insert($this->_tableName, $data);
 
@@ -50,6 +62,7 @@ class OrderModel extends MY_Model {
 	{
 		$this->db->where("uuid", $id);
 		$data = $this->db->get($this->_tableName)->row();
+		$data->detail = $this->OrderDetailModel->getOrderDetailByOrder($id);
 
 		$code = 200;
 		$message = "Success get detail order";
