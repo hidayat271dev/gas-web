@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 use Ramsey\Uuid\Uuid;
+use \Firebase\JWT\JWT;
 
 class MY_Model extends CI_model {
 
@@ -19,6 +20,22 @@ class MY_Model extends CI_model {
 
 	public function getCurrentDateTime($pattern = 'Y-m-d H:i:s') {
 		return date($pattern);
+	}
+
+	public function generateJWT($data)
+	{
+		$key = $this->config->item('encryption_key');
+		$jwt = JWT::encode($data, $key);
+
+		return $jwt;
+	}
+
+	public function generateDataJWT($token)
+	{
+		$key = $this->config->item('encryption_key');
+		$decoded = JWT::decode($token, $key, array('HS256'));
+
+		return $decoded;
 	}
 
 	public function generateResponse($message, $data, $error, $code) {
