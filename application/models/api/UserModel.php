@@ -42,7 +42,14 @@ class UserModel extends MY_Model {
 
 	public function getAllData()
 	{
-		return $this->dataApi['uuid'] = $this->generateUUID();
+		$this->db->where("deleted_at", NULL);
+		$data = $this->db->get($this->_table_name)->result();
+
+		$code = 200;
+		$message = "Success get list user";
+		$data = $data;
+		$error = NULL;
+		return $this->generateResponse($message, $data, $error, $code);
 	}
 
 	public function getValidationCreate() {
