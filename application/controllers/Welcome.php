@@ -45,5 +45,7 @@ class Welcome extends CI_controller {
 
         print_r($decoded_array);
         print_r($decoded);
+
+        var_dump($this->input->get_request_header('Authorization'));
 	}
 }

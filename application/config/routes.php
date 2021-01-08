@@ -59,6 +59,9 @@ $route['translate_uri_dashes'] = FALSE;
 | -------------------------------------------------------------------------
 */
 
+// Authentication Endpoint
+$route['api/v1/login']['POST'] = 'api/AuthController/index';
+
 // Users Endpoint
 $route['api/v1/users']['GET'] = 'api/UserController/index';
 $route['api/v1/users']['POST'] = 'api/UserController/index';
