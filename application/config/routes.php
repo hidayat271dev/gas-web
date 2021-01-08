@@ -69,3 +69,11 @@ $route['api/v1/users/(:any)']['GET'] = 'api/UserController/detail/$1';
 $route['api/v1/users/(:any)']['POST'] = 'api/UserController/update/$1';
 $route['api/v1/users/(:any)']['DELETE'] = 'api/UserController/deletesoft/$1';
 $route['api/v1/users/drop/(:any)']['DELETE'] = 'api/UserController/deletehard/$1';
+
+// Product Endpoint
+$route['api/v1/products']['GET'] = 'api/ProductController/index';
+$route['api/v1/products']['POST'] = 'api/ProductController/index';
+$route['api/v1/products/(:any)']['GET'] = 'api/ProductController/detail/$1';
+$route['api/v1/products/(:any)']['POST'] = 'api/ProductController/update/$1';
+$route['api/v1/products/(:any)']['DELETE'] = 'api/ProductController/deletesoft/$1';
+$route['api/v1/products/drop/(:any)']['DELETE'] = 'api/ProductController/deletehard/$1';
