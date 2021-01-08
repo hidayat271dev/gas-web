@@ -52,6 +52,18 @@ class UserModel extends MY_Model {
 		return $this->generateResponse($message, $data, $error, $code);
 	}
 
+	public function getDataById($id)
+	{
+		$this->db->where("uuid", $id);
+		$data = $this->db->get($this->_table_name)->row();
+
+		$code = 200;
+		$message = "Success get detail user";
+		$data = $data;
+		$error = NULL;
+		return $this->generateResponse($message, $data, $error, $code);
+	}
+
 	public function getValidationCreate() {
 		$this->form_validation->set_rules(
                 'username', 'Username',

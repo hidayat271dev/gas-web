@@ -27,6 +27,11 @@ class UserController extends RestController {
 	{
 		// Users from a data store e.g. database
 		$response = $this->UserModel->getAllData();
-		$this->response( $response["response"], $response["code"] );
+		return $this->response( $response["response"], $response["code"] );
+	}
+
+	public function detail_get($id) {
+		$response = $this->UserModel->getDataById($id);
+		return $this->response( $response["response"], $response["code"] );
 	}
 }

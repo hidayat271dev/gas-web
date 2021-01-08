@@ -60,5 +60,6 @@ $route['translate_uri_dashes'] = FALSE;
 */
 
 // Users Endpoint
-$route['api/v1/users/get'] = 'api/UserController/index_get';
-$route['api/v1/users/create'] = 'api/UserController/index_post';
+$route['api/v1/users']['GET'] = 'api/UserController/index';
+$route['api/v1/users/(:any)']['GET'] = 'api/UserController/detail/$1';
+$route['api/v1/users']['POST'] = 'api/UserController/index';
