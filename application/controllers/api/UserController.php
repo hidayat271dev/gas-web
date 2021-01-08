@@ -39,8 +39,21 @@ class UserController extends RestController {
 	{
 		$dataSave = $this->input->post();
 
-		// TODO: Create validation
 		$response = $this->UserModel->updateData($id, $dataSave);
+
+		$this->response( $response["response"], $response["code"] );
+	}
+
+	public function deletesoft_delete($id)
+	{
+		$response = $this->UserModel->deteleSoftData($id);
+
+		$this->response( $response["response"], $response["code"] );
+	}
+
+	public function deletehard_delete($id)
+	{
+		$response = $this->UserModel->deteleHardData($id);
 
 		$this->response( $response["response"], $response["code"] );
 	}

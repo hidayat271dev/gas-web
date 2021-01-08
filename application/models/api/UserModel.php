@@ -109,6 +109,37 @@ class UserModel extends MY_Model {
 		}
 	}
 
+	public function deteleSoftData($id) {
+		$this->db->where("uuid", $id);
+		$currentData = $this->db->get($this->_tableName)->row();
+
+		$dataSave = array();
+		$dataSave['deleted_at'] = $this->getCurrentDateTime();
+
+		$this->db->where('id', $currentData->id);
+		$this->db->update($this->_tableName, $dataSave);
+
+		$code = 200;
+		$message = "Success delete data user";
+		$dataResponse = $currentData;
+		$error = NULL;
+		return $this->generateResponse($message, $dataResponse, $error, $code);
+	}
+
+	public function deteleHardData($id) {
+		$this->db->where("uuid", $id);
+		$currentData = $this->db->get($this->_tableName)->row();
+
+		$this->db->where("id", $currentData->id);
+		$this->db->delete($this->_tableName);
+
+		$code = 200;
+		$message = "Success hard delete data user";
+		$dataResponse = $currentData;
+		$error = NULL;
+		return $this->generateResponse($message, $dataResponse, $error, $code);
+	}
+
 	public function getValidationCreate() {
 		$this->getValidationCreateUsername();
 		$this->getValidationCreateEmail();
