@@ -78,7 +78,7 @@ $route['api/v1/products/(:any)']['POST'] = 'api/ProductController/update/$1';
 $route['api/v1/products/(:any)']['DELETE'] = 'api/ProductController/deletesoft/$1';
 $route['api/v1/products/drop/(:any)']['DELETE'] = 'api/ProductController/deletehard/$1';
 
-// Product Endpoint
+// Order Endpoint
 $route['api/v1/orders']['GET'] = 'api/OrderController/index';
 $route['api/v1/orders']['POST'] = 'api/OrderController/index';
 $route['api/v1/orders/(:any)']['GET'] = 'api/OrderController/detail/$1';
