@@ -85,3 +85,11 @@ $route['api/v1/orders/(:any)']['GET'] = 'api/OrderController/detail/$1';
 $route['api/v1/orders/(:any)']['POST'] = 'api/OrderController/update/$1';
 $route['api/v1/orders/(:any)']['DELETE'] = 'api/OrderController/deletesoft/$1';
 $route['api/v1/orders/drop/(:any)']['DELETE'] = 'api/OrderController/deletehard/$1';
+
+/*
+| -------------------------------------------------------------------------
+| APP URI ROUTING
+| -------------------------------------------------------------------------
+*/
+// Template Endpoint
+$route['template'] = 'web/TemplateController/index';
