@@ -23,7 +23,7 @@ class Welcome extends CI_controller {
 	 */
 	public function index()
 	{
-		redirect('template');
+		redirect('login');
 		$key = "example_key";
 		$payload = array(
 			"iss" => "http://example.org",

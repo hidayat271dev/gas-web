@@ -80,6 +80,9 @@ $route['api/v1/products/(:any)']['POST'] = 'api/ProductController/update/$1';
 $route['api/v1/products/(:any)']['DELETE'] = 'api/ProductController/deletesoft/$1';
 $route['api/v1/products/drop/(:any)']['DELETE'] = 'api/ProductController/deletehard/$1';
 
+// Categories Endpoint
+$route['api/v1/categories']['GET'] = 'api/CategoryController/index';
+
 // Order Endpoint
 $route['api/v1/orders']['GET'] = 'api/OrderController/index';
 $route['api/v1/orders']['POST'] = 'api/OrderController/index';
@@ -96,6 +99,11 @@ $route['api/v1/orders/drop/(:any)']['DELETE'] = 'api/OrderController/deletehard/
 
 // Template Endpoint
 $route['template'] = 'web/TemplateController/index';
+
+// Auth
+$route['login'] = 'web/AuthController/index';
+$route['auth'] = 'web/AuthController/login';
+$route['forgot'] = 'web/AuthController/forgot';
 
 // Dashboard Endpoint
 $route['dashboard'] = 'web/DashboardController/index';

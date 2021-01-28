@@ -8,6 +8,10 @@ class MY_Controller extends CI_controller {
 		// Construct the parent class
 		parent::__construct();
 		$this->data = array();
+
+		if ($this->session->userdata('user_logged') == NULL) {
+			redirect(base_url('login'));
+		}
 	}
 
 }
