@@ -20,4 +20,20 @@ class AuthController extends RestController {
 
 		$this->response( $response["response"], $response["code"] );
 	}
+
+	public function register_post() {
+		$dataRequest = $this->input->post();
+
+		$response = $this->AuthModel->createRegisterUser($dataRequest);
+
+		$this->response( $response["response"], $response["code"] );
+	}
+
+	public function forgot_post() {
+		$dataRequest = $this->input->post();
+		
+		$response = $this->AuthModel->createForgotUser($dataRequest);
+
+		$this->response( $response["response"], $response["code"] );
+	}
 }

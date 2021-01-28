@@ -5,8 +5,37 @@ use \Firebase\JWT\JWT;
 
 class AuthModel extends MY_Model {
 
+	private $_tableName = "users";
+
+	public function createRegisterUser($data) {
+		$data['uuid'] = $this->generateUUID();
+		$data['access'] = 1;
+		$data['account_status'] = 1;
+		$data['pic_profile'] = "https://jrlifesciences.com/wp-content/uploads/2018/09/gravatar.jpg";
+		$data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+		$data['created_at'] = $this->getCurrentDateTime();
+		$data['updated_at'] = $this->getCurrentDateTime();
+
+		$result = $this->db->insert($this->_tableName, $data);
+
+		$code = 201;
+		$message = "Success create new user";
+		$dataResponse = $data;
+		$error = NULL;
+		return $this->generateResponse($message, $dataResponse, $error, $code);
+	}
+
+	public function createForgotUser()
+	{
+		$code = 200;
+		$message = "Success forgot user";
+		$dataResponse = NULL;
+		$error = NULL;
+		return $this->generateResponse($message, $dataResponse, $error, $code);
+	}
+
 	public function loginApp($dataRequest) {
-		$this->db->where("username", $dataRequest["username"]);
+		$this->db->where("phone", $dataRequest["username"]);
 		$this->db->or_where("email", $dataRequest["username"]);
 		$currentData = $this->db->get("users")->row();
 
