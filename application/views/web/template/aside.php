@@ -31,7 +31,7 @@
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
                 <li class="menu-item" aria-haspopup="true">
-                    <a href="index.html" class="menu-link">
+                    <a href="<?php echo base_url('dashboard'); ?>" class="menu-link">
                         <i class="menu-icon flaticon-home"></i>
                         <span class="menu-text">Dashboard</span>
                     </a>
@@ -50,7 +50,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/themes/aside-light.html" class="menu-link">
+                                <a href="<?php echo base_url('user/create'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -58,7 +58,7 @@
                                 </a>
                             </li>
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/themes/aside-light.html" class="menu-link">
+                                <a href="<?php echo base_url('user/data'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -78,7 +78,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="layout/subheader/toolbar.html" class="menu-link">
+                                <a href="<?php echo base_url('product/create'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -86,7 +86,7 @@
                                 </a>
                             </li>
                             <li class="menu-item menu-item-active" aria-haspopup="true">
-                                <a href="layout/subheader/toolbar.html" class="menu-link">
+                                <a href="<?php echo base_url('product/data'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -97,7 +97,7 @@
                     </div>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
-                    <a target="_blank" href="https://preview.keenthemes.com/metronic/demo1/builder.html" class="menu-link">
+                    <a href="<?php echo base_url('order'); ?>" class="menu-link">
                         <i class="menu-icon flaticon-cogwheel-1"></i>
                         <span class="menu-text">Order</span>
                     </a>

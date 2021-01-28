@@ -91,5 +91,18 @@ $route['api/v1/orders/drop/(:any)']['DELETE'] = 'api/OrderController/deletehard/
 | APP URI ROUTING
 | -------------------------------------------------------------------------
 */
+
 // Template Endpoint
 $route['template'] = 'web/TemplateController/index';
+
+// Dashboard Endpoint
+$route['dashboard'] = 'web/DashboardController/index';
+
+// Master Data User Endpoint
+$route['user'] = 'web/UserController/index';
+
+// Master Data Product Endpoint
+$route['product'] = 'web/ProductController/index';
+
+// Master Data Orders Endpoint
+$route['order'] = 'web/OrderController/index';
