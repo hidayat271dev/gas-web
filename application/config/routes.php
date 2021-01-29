@@ -95,6 +95,8 @@ $route['api/v1/orders/(:any)']['POST'] = 'api/OrderController/update/$1';
 $route['api/v1/orders/(:any)']['DELETE'] = 'api/OrderController/deletesoft/$1';
 $route['api/v1/orders/drop/(:any)']['DELETE'] = 'api/OrderController/deletehard/$1';
 
+$route['api/v2/orders']['GET'] = 'api/OrderControllerV2/index';
+
 /*
 | -------------------------------------------------------------------------
 | APP URI ROUTING
