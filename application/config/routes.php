@@ -80,6 +80,8 @@ $route['api/v1/products/(:any)']['POST'] = 'api/ProductController/update/$1';
 $route['api/v1/products/(:any)']['DELETE'] = 'api/ProductController/deletesoft/$1';
 $route['api/v1/products/drop/(:any)']['DELETE'] = 'api/ProductController/deletehard/$1';
 
+$route['api/v2/products']['GET'] = 'api/ProductControllerV2/index';
+
 // Categories Endpoint
 $route['api/v1/categories']['GET'] = 'api/CategoryController/index';
 
@@ -104,15 +106,24 @@ $route['template'] = 'web/TemplateController/index';
 $route['login'] = 'web/AuthController/index';
 $route['auth'] = 'web/AuthController/login';
 $route['forgot'] = 'web/AuthController/forgot';
+$route['logout'] = 'web/AuthController/logout';
 
 // Dashboard Endpoint
 $route['dashboard'] = 'web/DashboardController/index';
 
 // Master Data User Endpoint
 $route['user'] = 'web/UserController/index';
+$route['user/action'] = 'web/UserController/action';
 
 // Master Data Product Endpoint
 $route['product'] = 'web/ProductController/index';
+$route['product/action'] = 'web/ProductController/action';
+$route['product/action/(:any)'] = 'web/ProductController/action/$1';
+$route['product/detail/(:any)'] = 'web/ProductController/detail/$1';
+$route['product/delete/(:any)'] = 'web/ProductController/delete/$1';
+$route['product/save'] = 'web/ProductController/save';
+$route['product/save/(:any)'] = 'web/ProductController/save/$1';
 
 // Master Data Orders Endpoint
 $route['order'] = 'web/OrderController/index';
+$route['order/detail/(:any)'] = 'web/OrderController/detail/$1';

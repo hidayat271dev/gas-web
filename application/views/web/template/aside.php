@@ -50,7 +50,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo base_url('user/create'); ?>" class="menu-link">
+                                <a href="<?php echo base_url('user/action'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -58,7 +58,7 @@
                                 </a>
                             </li>
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo base_url('user/data'); ?>" class="menu-link">
+                                <a href="<?php echo base_url('user'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -78,7 +78,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo base_url('product/create'); ?>" class="menu-link">
+                                <a href="<?php echo base_url('product/action'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -86,7 +86,7 @@
                                 </a>
                             </li>
                             <li class="menu-item menu-item-active" aria-haspopup="true">
-                                <a href="<?php echo base_url('product/data'); ?>" class="menu-link">
+                                <a href="<?php echo base_url('product'); ?>" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>

@@ -38,10 +38,11 @@ class MY_Model extends CI_model {
 		return $decoded;
 	}
 
-	public function generateResponse($message, $data, $error, $code) {
+	public function generateResponse($message, $data, $error, $code, $meta = NULL) {
 		$response["response"]["message"] = $message;
 		$response["response"]["data"] = $data;
 		$response["response"]["error"] = $error;
+		if ($meta) $response["response"]["meta"] = $meta;
 		$response["code"] = $code;
 		return $response;
 	}

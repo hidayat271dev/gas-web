@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use chriskacerguis\RestServer\RestController;
 
-class AuthController extends RestController {
+class AuthController extends RestController
+{
 
 	function __construct()
 	{
@@ -12,28 +13,31 @@ class AuthController extends RestController {
 		$this->load->model('api/AuthModel', 'AuthModel');
 	}
 
-	public function index_post() {
+	public function index_post()
+	{
 		$dataRequest = $this->input->post();
 
 		$this->AuthModel->getValidationLogin();
 		$response = $this->AuthModel->loginApp($dataRequest);
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 
-	public function register_post() {
+	public function register_post()
+	{
 		$dataRequest = $this->input->post();
 
 		$response = $this->AuthModel->createRegisterUser($dataRequest);
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 
-	public function forgot_post() {
+	public function forgot_post()
+	{
 		$dataRequest = $this->input->post();
-		
+
 		$response = $this->AuthModel->createForgotUser($dataRequest);
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 }

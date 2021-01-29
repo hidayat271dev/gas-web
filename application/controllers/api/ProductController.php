@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use chriskacerguis\RestServer\RestController;
 
-class ProductController extends RestController {
+class ProductController extends RestController
+{
 
 	function __construct()
 	{
@@ -19,19 +20,20 @@ class ProductController extends RestController {
 		// TODO: Create validation
 		$response = $this->ProductModel->createData($dataSave);
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 
 	public function index_get()
 	{
 		// Users from a data store e.g. database
 		$response = $this->ProductModel->getAllData();
-		return $this->response( $response["response"], $response["code"] );
+		return $this->response($response["response"], $response["code"]);
 	}
 
-	public function detail_get($id) {
+	public function detail_get($id)
+	{
 		$response = $this->ProductModel->getDataById($id);
-		return $this->response( $response["response"], $response["code"] );
+		return $this->response($response["response"], $response["code"]);
 	}
 
 	public function update_post($id)
@@ -40,21 +42,21 @@ class ProductController extends RestController {
 
 		$response = $this->ProductModel->updateData($id, $dataSave);
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 
 	public function deletesoft_delete($id)
 	{
 		$response = $this->ProductModel->deteleSoftData($id);
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 
 	public function deletehard_delete($id)
 	{
 		$response = $this->ProductModel->deteleHardData($id);
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 
 }

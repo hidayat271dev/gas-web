@@ -1,6 +1,6 @@
 <!--end::Demo Panel-->
 <script>
-    var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
+    var HOST_URL = "<?php echo base_url(); ?>";
 </script>
 
 <!--begin::Global Config(global config for global JS scripts)-->
@@ -18,4 +18,11 @@
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
 <script src="<?php echo base_url('assets/js/pages/widgets.js'); ?>"></script>
+<?php
+	if (isset($content_script)) {
+		foreach($content_script as $script) {
+			echo '<script src="' . base_url('assets/js/app/' . $script) . '.js"></script>';
+		}
+	}
+?>
 <!--end::Page Scripts-->

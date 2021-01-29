@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use chriskacerguis\RestServer\RestController;
 
-class CategoryController extends RestController {
+class CategoryController extends RestController
+{
 
 	function __construct()
 	{
@@ -21,65 +22,65 @@ class CategoryController extends RestController {
 				"count_item" => 23,
 				"image" => ""
 			),
-						array(
-            				"id" => 1,
-            				"name" => "Kategori 1",
-            				"count_item" => 23,
-            				"image" => ""
-            			),
-            						array(
-                        				"id" => 1,
-                        				"name" => "Kategori 1",
-                        				"count_item" => 23,
-                        				"image" => ""
-                        			),
-                        						array(
-                                    				"id" => 1,
-                                    				"name" => "Kategori 1",
-                                    				"count_item" => 23,
-                                    				"image" => ""
-                                    			),
-                                    						array(
-                                                				"id" => 1,
-                                                				"name" => "Kategori 1",
-                                                				"count_item" => 23,
-                                                				"image" => ""
-                                                			),
-                                                						array(
-                                                            				"id" => 1,
-                                                            				"name" => "Kategori 1",
-                                                            				"count_item" => 23,
-                                                            				"image" => ""
-                                                            			),
-                                                            						array(
-                                                                        				"id" => 1,
-                                                                        				"name" => "Kategori 1",
-                                                                        				"count_item" => 23,
-                                                                        				"image" => ""
-                                                                        			),
-                                                                        						array(
-                                                                                    				"id" => 1,
-                                                                                    				"name" => "Kategori 1",
-                                                                                    				"count_item" => 23,
-                                                                                    				"image" => ""
-                                                                                    			),
-                                                                                    						array(
-                                                                                                				"id" => 1,
-                                                                                                				"name" => "Kategori 1",
-                                                                                                				"count_item" => 23,
-                                                                                                				"image" => ""
-                                                                                                			),
-                                                                                                						array(
-                                                                                                            				"id" => 1,
-                                                                                                            				"name" => "Kategori 1",
-                                                                                                            				"count_item" => 23,
-                                                                                                            				"image" => ""
-                                                                                                            			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
+			array(
+				"id" => 1,
+				"name" => "Kategori 1",
+				"count_item" => 23,
+				"image" => ""
+			),
 		);
 		$response["response"]["error"] = NULL;
 		$response["code"] = 200;
 
-		$this->response( $response["response"], $response["code"] );
+		$this->response($response["response"], $response["code"]);
 	}
 
 }

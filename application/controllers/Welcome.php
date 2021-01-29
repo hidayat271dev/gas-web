@@ -3,17 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use \Firebase\JWT\JWT;
 
-
-class Welcome extends CI_controller {
+class Welcome extends CI_controller
+{
 
 	/**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
+	 *        http://example.com/index.php/welcome
+	 *    - or -
+	 *        http://example.com/index.php/welcome/index
+	 *    - or -
 	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
@@ -35,18 +35,18 @@ class Welcome extends CI_controller {
 
 		print_r($jwt);
 
-        $decoded = JWT::decode($jwt, $key, array('HS256'));
+		$decoded = JWT::decode($jwt, $key, array('HS256'));
 
-        print_r($decoded);
+		print_r($decoded);
 
-        $decoded_array = (array) $decoded;
+		$decoded_array = (array)$decoded;
 
-        JWT::$leeway = 60; // $leeway in seconds
-        $decoded = JWT::decode($jwt, $key, array('HS256'));
+		JWT::$leeway = 60; // $leeway in seconds
+		$decoded = JWT::decode($jwt, $key, array('HS256'));
 
-        print_r($decoded_array);
-        print_r($decoded);
+		print_r($decoded_array);
+		print_r($decoded);
 
-        var_dump($this->input->get_request_header('Authorization'));
+		var_dump($this->input->get_request_header('Authorization'));
 	}
 }
