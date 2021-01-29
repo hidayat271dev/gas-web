@@ -7,6 +7,7 @@ class UserController extends MY_Controller
 	public function index()
 	{
 		$this->data['content_view'] = 'web/user/user_list';
+		$this->data['content_script'] = array('user_list');
 		$this->load->view('web/template/index', $this->data);
 	}
 

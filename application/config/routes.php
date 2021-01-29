@@ -72,6 +72,8 @@ $route['api/v1/users/(:any)']['POST'] = 'api/UserController/update/$1';
 $route['api/v1/users/(:any)']['DELETE'] = 'api/UserController/deletesoft/$1';
 $route['api/v1/users/drop/(:any)']['DELETE'] = 'api/UserController/deletehard/$1';
 
+$route['api/v2/users']['GET'] = 'api/UserControllerV2/index';
+
 // Product Endpoint
 $route['api/v1/products']['GET'] = 'api/ProductController/index';
 $route['api/v1/products']['POST'] = 'api/ProductController/index';
