@@ -1,7 +1,7 @@
 "use strict";
 // Class definition
 
-var KTDatatableProductList = function () {
+var KTDatatableuserList = function () {
 	// Private functions
 
 	// basic demo
@@ -74,7 +74,7 @@ var KTDatatableProductList = function () {
 				autoHide: false,
 				template: function (data) {
 					return '\
-							<a href="' + HOST_URL + 'product/detail/' + data.uuid + '" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
+							<a href="' + HOST_URL + 'user/detail/' + data.uuid + '" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
 	                            <span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-01-27-044720/theme/html/demo1/dist/../src/media/svg/icons/General/Visible.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
 										<rect x="0" y="0" width="24" height="24"/>\
@@ -83,7 +83,7 @@ var KTDatatableProductList = function () {
 									</g>\
 								</svg><!--end::Svg Icon--></span>\
 							</a>\
-							<a href="' + HOST_URL + 'product/action/' + data.uuid + '" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
+							<a href="' + HOST_URL + 'user/action/' + data.uuid + '" class="btn btn-sm btn-clean btn-icon mr-2" title="Edit details">\
 	                            <span class="svg-icon svg-icon-md">\
 									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -93,7 +93,7 @@ var KTDatatableProductList = function () {
 									</svg>\
 								</span>\
 							</a>\
-							<a href="' + HOST_URL + 'product/delete/' + data.uuid + '" class="btn btn-sm btn-clean btn-icon" title="Delete">\
+							<a href="' + HOST_URL + 'user/delete/' + data.uuid + '" class="btn btn-sm btn-clean btn-icon" title="Delete">\
 	                            <span class="svg-icon svg-icon-md">\
 	                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">\
 	                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\
@@ -130,5 +130,5 @@ var KTDatatableProductList = function () {
 }();
 
 jQuery(document).ready(function () {
-	KTDatatableProductList.init();
+	KTDatatableuserList.init();
 });

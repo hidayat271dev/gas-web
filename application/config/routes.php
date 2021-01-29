@@ -116,6 +116,11 @@ $route['dashboard'] = 'web/DashboardController/index';
 // Master Data User Endpoint
 $route['user'] = 'web/UserController/index';
 $route['user/action'] = 'web/UserController/action';
+$route['user/action/(:any)'] = 'web/UserController/action/$1';
+$route['user/detail/(:any)'] = 'web/UserController/detail/$1';
+$route['user/delete/(:any)'] = 'web/UserController/delete/$1';
+$route['user/save'] = 'web/UserController/save';
+$route['user/save/(:any)'] = 'web/UserController/save/$1';
 
 // Master Data Product Endpoint
 $route['product'] = 'web/ProductController/index';
