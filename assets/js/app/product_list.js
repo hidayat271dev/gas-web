@@ -57,6 +57,14 @@ var KTDatatableProductList = function () {
 					return data + 1;
 				}
 			}, {
+				field: 'img_cover',
+				title: 'Cover Image',
+				template: function (data) {
+					return 	'<div class="symbol symbol-40 symbol-sm flex-shrink-0">' +
+								'<img class="" src="' +data.img_cover+ '" alt="photo">' +
+							'</div>';
+				},
+			}, {
 				field: 'name',
 				title: 'Product Name',
 			}, {

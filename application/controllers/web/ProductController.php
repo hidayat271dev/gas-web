@@ -27,6 +27,7 @@ class ProductController extends MY_Controller
 
 		$this->data['data_product'] = $dataProduct;
 		$this->data['content_view'] = 'web/product/product_action';
+		$this->data['content_script'] = array('product_form');
 		$this->load->view('web/template/index', $this->data);
 	}
 

@@ -10,6 +10,7 @@
     <!--end::Fonts-->
     <!--begin::Page Vendors Styles(used by this page)-->
     <link href="<?php echo base_url('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css'); ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url('assets/plugins/custom/uppy/uppy.bundle.css'); ?>" rel="stylesheet" type="text/css" />
     <!--end::Page Vendors Styles-->
     <!--begin::Global Theme Styles(used by all pages)-->
     <link href="<?php echo base_url('assets/plugins/global/plugins.bundle.css'); ?>" rel="stylesheet" type="text/css" />

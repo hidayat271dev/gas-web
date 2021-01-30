@@ -83,6 +83,7 @@ $route['api/v1/products/(:any)']['DELETE'] = 'api/ProductController/deletesoft/$
 $route['api/v1/products/drop/(:any)']['DELETE'] = 'api/ProductController/deletehard/$1';
 
 $route['api/v2/products']['GET'] = 'api/ProductControllerV2/index';
+$route['api/v2/upload_cover']['POST'] = 'api/ProductControllerV2/uploadCoverProduct';
 
 // Categories Endpoint
 $route['api/v1/categories']['GET'] = 'api/CategoryController/index';

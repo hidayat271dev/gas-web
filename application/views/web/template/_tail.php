@@ -18,6 +18,7 @@
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
 <script src="<?php echo base_url('assets/js/pages/widgets.js'); ?>"></script>
+<script src="<?php echo base_url('assets/plugins/custom/uppy/uppy.bundle.js'); ?>"></script>
 <?php
 	if (isset($content_script)) {
 		foreach($content_script as $script) {

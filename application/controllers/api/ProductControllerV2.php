@@ -25,4 +25,22 @@ class ProductControllerV2 extends RestController
 
 	}
 
+	public function uploadCoverProduct_post()
+	{
+		$config['upload_path']          = './assets/uploads/products';
+		$config['allowed_types'] 		= 'jpg|jpeg|png|gif';
+		$config['max_size']             = 1000000000000;
+
+		$this->load->library('upload', $config);
+
+		if ( !$this->upload->do_upload('files'))
+		{
+			return $this->response($this->upload->display_errors(), 500);
+		}
+		else
+		{
+			return $this->response($this->upload->data(), 200);
+		}
+	}
+
 }

@@ -146,7 +146,7 @@
 				</div>
 			</div>
 			<!--end::Notice-->
-			<form method="post" action="<?php echo base_url('product/save/' . $data_product->uuid); ?>">
+			<form method="post" action="<?php echo base_url('product/save/' . $data_product->uuid); ?>" enctype="multipart/form-data">
 				<div class="card card-custom gutter-b">
 					<div class="card-header">
 						<div class="card-title">
@@ -160,7 +160,18 @@
 						<div class="form-group">
 							<label>Product Name <span class="text-danger">*</span></label>
 							<input name="name" type="text" class="form-control" placeholder="" value="<?php echo $data_product->name ?>"/>
+							<input name="img_cover" type="hidden" class="form-control" placeholder="" value="" id="img_cover"/>
 							<span class="form-text text-muted">Well never share your email with anyone else.</span>
+						</div>
+						<div class="form-group">
+							<label>Cover Image <span class="text-danger">*</span></label>
+							<div class="uppy" id="kt_uppy_5">
+								<div class="uppy-wrapper"></div>
+								<div class="uppy-list"></div>
+								<div class="uppy-status"></div>
+								<div class="uppy-informer uppy-informer-min"></div>
+							</div>
+							<span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
 						</div>
 						<div class="form-group">
 							<label>Price <span class="text-danger">*</span></label>
