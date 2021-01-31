@@ -46,16 +46,28 @@ class OrderModel extends MY_Model {
 		}
 	}
 
-	public function getAllData()
+	public function getAllData($token = NULL)
 	{
-		$this->db->where("deleted_at", NULL);
-		$data = $this->db->get($this->_tableName)->result();
+		if ($token) {
+			$dataUser = $this->generateDataJWT($token);
 
-		$code = 200;
-		$message = "Success get list order";
-		$dataResponse = $data;
-		$error = NULL;
-		return $this->generateResponse($message, $dataResponse, $error, $code);
+			$this->db->where("user_id", $dataUser->uuid);
+			$this->db->where("deleted_at", NULL);
+			$data = $this->db->get($this->_tableName)->result();
+
+			$code = 200;
+			$message = "Success get list order";
+			$dataResponse = $data;
+			$error = NULL;
+			return $this->generateResponse($message, $dataResponse, $error, $code);
+		} else {
+			$code = 500;
+			$message = "Failed create new product";
+			$dataResponse = NULL;
+			$error["title"] = "Cannot Create product";
+			$error["message"] = "Please check your token";
+			return $this->generateResponse($message, $dataResponse, $error, $code);
+		}
 	}
 
 	public function getDataById($id)

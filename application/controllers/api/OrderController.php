@@ -29,8 +29,10 @@ class OrderController extends RestController
 
 	public function index_get()
 	{
-		// Users from a data store e.g. database
-		$response = $this->OrderModel->getAllData();
+		$token = $this->input->get_request_header('Authorization');
+		$token = explode(" ", $token);
+		$token = $token[1];
+		$response = $this->OrderModel->getAllData($token);
 		return $this->response($response["response"], $response["code"]);
 	}
 
