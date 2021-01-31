@@ -137,3 +137,6 @@ $route['product/save/(:any)'] = 'web/ProductController/save/$1';
 // Master Data Orders Endpoint
 $route['order'] = 'web/OrderController/index';
 $route['order/detail/(:any)'] = 'web/OrderController/detail/$1';
+$route['order/delete/(:any)'] = 'web/OrderController/delete/$1';
+$route['order/confirm/(:any)'] = 'web/OrderController/confirm/$1';
+

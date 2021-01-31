@@ -28,6 +28,7 @@ class OrderModelV2 extends MY_Model {
 
 		$from = $this->db->from($this->_tableName);
 		$from->join('users', $this->_tableName . '.user_id = users.uuid');
+		$from->select( $this->_tableName . '.id, ' . $this->_tableName . '.uuid, fullname, email, phone, order_number');
 
 		if (isset($query['generalSearch'])) {
 
@@ -47,7 +48,7 @@ class OrderModelV2 extends MY_Model {
 		}
 
 		$from->where($this->_tableName .".deleted_at", NULL);
-		// $from->order_by($sortField, $sortType);
+	 	$from->order_by($sortField, $sortType);
 		$from->limit($perpage, $offset);
 		$data = $from->get()->result();
 

@@ -48,7 +48,7 @@
 						<div class="form-group">
 							<label>Product Name <span class="text-danger">*</span></label>
 							<input name="name" type="text" class="form-control" placeholder="" value="<?php echo $data_product->name ?>"/>
-							<input name="img_cover" type="hidden" class="form-control" placeholder="" value="" id="img_cover"/>
+							<input name="img_cover" type="hidden" class="form-control" placeholder="" value="<?php echo $data_product->img_cover ?>" id="img_cover"/>
 						</div>
 						<div class="form-group">
 							<label>Cover Image <span class="text-danger">*</span></label>

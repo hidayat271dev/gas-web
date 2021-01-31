@@ -29,9 +29,7 @@
 			<!--end::Info-->
 			<!--begin::Toolbar-->
 			<div class="d-flex align-items-center">
-				<!--begin::Actions-->
-				<a href="<?php echo base_url('product/action'); ?>" class="btn btn-light-primary font-weight-bolder btn-sm">Actions</a>
-				<!--end::Actions-->
+				
 			</div>
 			<!--end::Toolbar-->
 		</div>
