@@ -3,8 +3,9 @@
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
-        <a href="index.html" class="brand-logo">
-            <img alt="Logo" src="<?php echo base_url('assets/media/logos/logo-light.png'); ?>" />
+        <a href="<?php echo base_url(); ?>" class="brand-logo">
+            <img alt="Logo" src="<?php echo base_url('assets/media/logos/lpgo.png'); ?>" width="20%"/>
+			<p class="font-weight-boldest" style="margin: 5%; color: #FFF;">LPG-O</p>
         </a>
         <!--end::Logo-->
         <!--begin::Toggle-->
@@ -30,7 +31,10 @@
         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
-                <li class="menu-item" aria-haspopup="true">
+				<?php
+					$dashboard = ($this->uri->segment(1) == 'dashboard') ? 'menu-item menu-item-open' : 'menu-item';
+				?>
+                <li class="<?php echo $dashboard; ?>" aria-haspopup="true">
                     <a href="<?php echo base_url('dashboard'); ?>" class="menu-link">
                         <i class="menu-icon flaticon-home"></i>
                         <span class="menu-text">Dashboard</span>
@@ -40,68 +44,33 @@
                     <h4 class="menu-text">Master Data</h4>
                     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="menu-icon flaticon-graphic"></i>
-                        <span class="menu-text">Users</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="menu-submenu">
-                        <i class="menu-arrow"></i>
-                        <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo base_url('user/action'); ?>" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Create User</span>
-                                </a>
-                            </li>
-                            <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo base_url('user'); ?>" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">List User</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item menu-item-submenu menu-item-open" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="javascript:;" class="menu-link menu-toggle">
-                        <i class="menu-icon flaticon-layers"></i>
-                        <span class="menu-text">Product</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="menu-submenu">
-                        <i class="menu-arrow"></i>
-                        <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
-                                <a href="<?php echo base_url('product/action'); ?>" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">Create Product</span>
-                                </a>
-                            </li>
-                            <li class="menu-item menu-item-active" aria-haspopup="true">
-                                <a href="<?php echo base_url('product'); ?>" class="menu-link">
-                                    <i class="menu-bullet menu-bullet-dot">
-                                        <span></span>
-                                    </i>
-                                    <span class="menu-text">List Product</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu-item" aria-haspopup="true">
-                    <a href="<?php echo base_url('order'); ?>" class="menu-link">
-                        <i class="menu-icon flaticon-cogwheel-1"></i>
-                        <span class="menu-text">Order</span>
-                    </a>
-                </li>
+				<?php
+				$user = ($this->uri->segment(1) == 'user') ? 'menu-item menu-item-open' : 'menu-item';
+				?>
+				<li class="<?php echo $user; ?>" aria-haspopup="true">
+					<a href="<?php echo base_url('user'); ?>" class="menu-link">
+						<i class="menu-icon flaticon-home"></i>
+						<span class="menu-text">User</span>
+					</a>
+				</li>
+				<?php
+				$product = ($this->uri->segment(1) == 'product') ? 'menu-item menu-item-open' : 'menu-item';
+				?>
+				<li class="<?php echo $product; ?>" aria-haspopup="true">
+					<a href="<?php echo base_url('product'); ?>" class="menu-link">
+						<i class="menu-icon flaticon-home"></i>
+						<span class="menu-text">Product</span>
+					</a>
+				</li>
+				<?php
+					$order = ($this->uri->segment(1) == 'order') ? 'menu-item menu-item-open' : 'menu-item';
+				?>
+				<li class="<?php echo $order; ?>" aria-haspopup="true">
+					<a href="<?php echo base_url('order'); ?>" class="menu-link">
+						<i class="menu-icon flaticon-home"></i>
+						<span class="menu-text">Order</span>
+					</a>
+				</li>
             </ul>
             <!--end::Menu Nav-->
         </div>
