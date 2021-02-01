@@ -32,6 +32,7 @@ class OrderDetailModel extends MY_Model {
 
 	public function getOrderDetailByOrder($orderId)
 	{
+		$this->db->select("*, " . $this->_tableName . ".qty, " . $this->_tableName . ".price AS sale_price");
 		$this->db->where("order_id", $orderId);
 		$this->db->join('products', 'products.uuid = ' . $this->_tableName . '.product_id');
 		$data = $this->db->get($this->_tableName)->result();
