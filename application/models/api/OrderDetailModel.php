@@ -27,6 +27,10 @@ class OrderDetailModel extends MY_Model {
 			$saveData["updated_at"] = $this->getCurrentDateTime();
 
 			$result = $this->db->insert($this->_tableName, $saveData);
+
+			$dataUpdate['qty'] = $dataProduct->qty - $qty[$idx];
+			$this->db->where('id', $dataProduct->id);
+			$this->db->update("products", $dataUpdate);
 		}
 	}
 
