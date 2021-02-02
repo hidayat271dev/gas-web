@@ -64,6 +64,10 @@ class AuthModel extends MY_Model {
 					$dataResponse['token'] = $this->generateJWT($currentData);
 					$dataResponse['user'] = $currentData;
 
+					$this->db->where("user_id", $currentData->uuid);
+					$this->db->where("is_primary", 1);
+					$dataResponse['current_address'] = $this->db->get("user_address")->row();
+
 					$code = 200;
 					$message = "Success Login";
 					$error = NULL;
