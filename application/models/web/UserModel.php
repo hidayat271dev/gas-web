@@ -26,6 +26,8 @@ class UserModel extends MY_Model {
 	}
 
 	public function saveData($data, $id) {
+		$data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+
 		if ($id) {
 			$data['updated_at'] = $this->getCurrentDateTime();
 			$this->db->where('uuid', $id);
