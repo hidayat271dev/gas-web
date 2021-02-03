@@ -90,8 +90,8 @@
 									<div class="font-size-lg font-weight-bold mb-10"><?php echo $data_order->order_number ?></div>
 									<!--end::Invoice No-->
 									<!--begin::Invoice Date-->
-									<div class="text-dark-50 font-size-lg font-weight-bold mb-3">DATE</div>
-									<div class="font-size-lg font-weight-bold"><?php echo $data_order->created_at ?></div>
+									<div class="text-dark-50 font-size-lg font-weight-bold mb-3">DELIVERY TO</div>
+									<div class="font-size-lg font-weight-bold"><?php echo $data_order->address_meta ?></div>
 									<!--end::Invoice Date-->
 								</div>
 							</div>

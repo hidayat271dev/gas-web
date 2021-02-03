@@ -10,6 +10,7 @@ class OrderModel extends MY_Model {
 		$this->db->select("*," . $this->_tableName . ".uuid");
 		$this->db->where($this->_tableName . ".uuid", $uuid);
 		$this->db->join('users', $this->_tableName . '.user_id = users.uuid');
+		$this->db->join('user_address', $this->_tableName . '.address_id = user_address.uuid', 'left');
 		return $this->db->get($this->_tableName)->row();
 	}
 
